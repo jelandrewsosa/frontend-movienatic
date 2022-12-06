@@ -10,7 +10,7 @@ export const useLogIn = () => {
     setIsLoading(true)
     setError(null)
 
-    const response = await fetch('http://localhost:5173/user', {
+    const response = await fetch('https://express-service-q2ir.onrender.com/user', {
       method: 'GET',
       headers: {email, password},
     })

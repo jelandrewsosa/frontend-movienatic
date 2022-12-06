@@ -47,7 +47,7 @@ export const UserMovie = () => {
     const userId = await user._id;
 
     const usermoviesRes = await axios.get(
-      `http://localhost:5173/usermovies/${userId}`
+      `https://express-service-q2ir.onrender.com/usermovies/${userId}`
     );
     const movieId = await usermoviesRes.data[0].movieId;
     const userMovieId = await usermoviesRes.data[0]._id;
@@ -57,7 +57,7 @@ export const UserMovie = () => {
     console.log(usermoviesRes.data[0]);
     console.log(movieId);
 
-    const movieRes = await axios.get(`http://localhost:5173/movie/${movieId}`);
+    const movieRes = await axios.get(`https://express-service-q2ir.onrender.com/movie/${movieId}`);
     setMovieTitle(movieRes.data.title);
     setMovieSummary(movieRes.data.summary);
     console.log(movieRes.data);
@@ -65,7 +65,7 @@ export const UserMovie = () => {
 
   const deleteUserMovie = async (event) => {
     try {
-      await axios.delete(`http://localhost:5173/user/usermovie/${userMovieId}`);
+      await axios.delete(`https://express-service-q2ir.onrender.com/user/usermovie/${userMovieId}`);
       navigate("/");
     } catch (error) {
       console.log(`Deleted Movie from the list`);
@@ -82,7 +82,7 @@ export const UserMovie = () => {
       })
     );
     try {
-      await axios.patch(`http://localhost:5173/user/${userMovieId}`, editData);
+      await axios.patch(`https://express-service-q2ir.onrender.com/user/${userMovieId}`, editData);
       navigate("/profile");
     } catch (error) {
       console.log(error);

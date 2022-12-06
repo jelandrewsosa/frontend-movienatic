@@ -43,7 +43,7 @@ const MovieDetails = ({movie}) => {
       })
     );
     try {
-      await axios.post(`http://localhost:5173/user/${movieId}/${userId}`, data);
+      await axios.post(`https://express-service-q2ir.onrender.com/user/${movieId}/${userId}`, data);
       console.log(`Added review and rating for Movie ${movie.title} to my watched list`);
       navigate('/profile');
     } catch (error) {

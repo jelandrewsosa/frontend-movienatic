@@ -10,7 +10,7 @@ export const useSignup = () => {
     setIsLoading(true)
     setError(null)
 
-    const response = await fetch('http://localhost:5173/user', {
+    const response = await fetch('https://express-service-q2ir.onrender.com/user', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({email, password, firstName, lastName})

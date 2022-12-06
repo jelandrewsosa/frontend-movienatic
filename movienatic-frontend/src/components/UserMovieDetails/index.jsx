@@ -24,7 +24,7 @@ export default function UserMovieDetails({ userReview, userRating, userMovieId, 
   
   const deleteUserMovie = async (event) => {
     try {
-      await axios.delete(`http://localhost:5173/user/usermovie/${userMovieId}`);
+      await axios.delete(`https://express-service-q2ir.onrender.com/user/usermovie/${userMovieId}`);
       navigate("/");
     } catch (error) {
       console.log(`Deleted Movie from the list`);

@@ -9,7 +9,7 @@ const Movie = () => {
 
   useEffect(() => {
     const fetchMovie = async () => {
-      const response = await fetch('http://localhost:5173/movies')
+      const response = await fetch('https://express-service-q2ir.onrender.com/movies')
       const json = await response.json()
 
       if (response.ok) {
